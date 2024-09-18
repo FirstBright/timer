@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react"
-interface ITimerButton {
-    timerId: number // or string if needed
-    label: string
-}
 
-const TimerButton = ({ timerId, label }: ITimerButton) => {
+const TimerButton = ({ timerId, label }) => {
     const [timeRemaining, setTimeRemaining] = useState(0) // Time remaining in seconds
     const [isRunning, setIsRunning] = useState(false) // Track if the timer is running
 
@@ -25,7 +21,7 @@ const TimerButton = ({ timerId, label }: ITimerButton) => {
 
     // Handle the countdown logic
     useEffect(() => {
-        let intervalId: any
+        let intervalId
 
         if (isRunning && timeRemaining > 0) {
             intervalId = setInterval(() => {
